@@ -12,3 +12,20 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+.job-tile {
+  padding: 0 20px;
+  .job-header{
+    padding-bottom: 20px;
+  }
+  .job-description {
+    padding-bottom: 40px;
+  }
+  .job-seperator {
+    border-bottom: 1px solid $gray-light;
+  }
+  .job-date {
+    color: $gray-light;
+    font-size: 0.7em;
+  }
+}

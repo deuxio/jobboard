@@ -1,0 +1,11 @@
+<%= simple_form_for(@job, html: {class: 'form-horizontal'}) do |f| %>
+  <%= f.input :title, label: "titre de l'offre" %>
+  <%= f.input :company, label: 'compagnie' %>
+  <%= f.input :city, label: 'Ville' %>
+  <%= f.input :description, label: "description de l'offre", as: :text %>
+  <%= f.input :category, label: "type d'offre", collection: ["CDI", "CDD", "Stage", "Alternance", "Consultant"] %>
+  <%= f.input :url, label: "lien vers l'offre originale" %>
+  <%= f.button :submit, label: "Publier", class: "btn btn-primary"  %>
+<% end %>
+
+<%= link_to "Annuler", jobs_path %>

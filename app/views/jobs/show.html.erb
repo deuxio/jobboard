@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class="job-tile">
+        <div class="job-header">
+          <h1><%= @job.title.capitalize %><small>, chez <%= @job.company.downcase %></small></h1>
+          <div class="pull-right label <%= render "jobcategory", category: @job.category %>">
+            <%= @job.category %>
+          </div>
+          <i class="fa fa-location-arrow"></i> <%= @job.city %>
+        </div>
+        <div class="job-description">
+          <%= @job.description %>
+        </div>
+        <a href="<%= @job.url %>?utm_source=frenchtechjobs&utm_medium=site&utm_campaign=jobboard" class="btn btn-sm pull-right btn-default" target="_blank"><i class="fa fa-arrow-circle-right"></i> voir l'offre sur le site de <%= @job.company.downcase %></a>
+        <div class="job-date">
+          <%= @job.updated_at.strftime("mise à jour le %d/%m/%Y") %>
+          <% if policy(@job).update? %>
+            &nbsp(<%= link_to 'mettre à jour', edit_job_path %>)
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-3">
+    </div>
+  </div>
+</div>
